@@ -1,14 +1,26 @@
 const entryForm = document.getElementById('entryForm');
-const entriesSection = document.getElementById('entires');
-const entryTextbox = document.getElementsByClassName('entry-textbox');
+const entriesSection = document.querySelector('#entries');
+const entryTextbox = document.querySelector('.entry-textbox');
+const entriesNav = document.querySelector('.entries-nav');
 
+let count = 1;
 function addToEntryDom(event) {
   event.preventDefault();
   const entryDiv = document.createElement('div');
   entryDiv.className = 'single-entry';
-  entryDiv.innerHTML = entryTextbox[0].value;
+  entryDiv.innerHTML = entryTextbox.value;
+  entryDiv.style.display = 'none';
+  console.log(entryDiv);
   entriesSection.appendChild(entryDiv);
-  //   console.log(entryTextbox[0].value);
+  //   code for clearing textbox after pressing submit button
+  entryTextbox.value = '';
+
+  const displayEntryButton = document.createElement('button');
+  displayEntryButton.className = 'display-entry-button';
+  displayEntryButton.innerText = count;
+  entriesNav.appendChild(displayEntryButton);
+
+  count++;
 }
 
 entryForm.addEventListener('submit', addToEntryDom);

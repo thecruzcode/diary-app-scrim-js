@@ -37,6 +37,10 @@ textarea::placeholder {
   margin-left: 76%;
 }
 
+.button:focus {
+  outline: none;
+}
+
 #entries {
   background: #c3d6d6;
   color: #444444;
@@ -46,4 +50,17 @@ textarea::placeholder {
   border: unset;
   border-radius: 25px;
   margin-top: 1em;
+}
+
+/* styling for the display entires nav and display entry buttons */
+.entries-nav {
+  padding-bottom: 1em;
+}
+
+.display-entry-button {
+  margin: 0.2em;
+}
+
+.display-entry-button:hover {
+  cursor: pointer;
 }
